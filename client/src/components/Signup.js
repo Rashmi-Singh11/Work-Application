@@ -28,7 +28,7 @@ const Signup = () => {
         data.append('resume', formData.resume);
 
         try {
-            const res = await axios.post('http://localhost:5000/api/signup', data);
+            const res = await axios.post('https://work-application-1.onrender.com/api/signup', data);
             alert(res.data.message);
         } catch (err) {
             console.error(err);
