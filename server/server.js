@@ -22,7 +22,9 @@ app.use(cors({
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded files
 mongoose.connect('mongodb+srv://kalpesh_158:90pvNz4OSGVkgABP@cluster0.ksqwf0d.mongodb.net/auth-db');
-
+app.get("/",(req.res)=>{
+    res.json("Hello");
+})
 // Routes
 const signupRoute = require('./routes/signup');
 app.use('/api/signup', signupRoute);
