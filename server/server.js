@@ -14,7 +14,11 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.log(err));
 
 // Middleware
-app.use(cors());
+app.use(cors({
+     origin : ["https://work-application.1whq.vercel.app"],
+     methods:["POST" , "GET"],
+     credentials:true
+}));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded files
 
